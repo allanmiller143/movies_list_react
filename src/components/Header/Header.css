@@ -1,0 +1,24 @@
+.header{
+  background-color: rgb(20, 20, 20);
+  position: fixed;
+  width: 100%;
+  z-index: 1; /* faz com que qualquer rolagem fique por trás do componente*/
+  height: 50px;
+  
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: beige;
+  height: 100%; /* Ocupa toda a altura disponível */
+}
+
+
+
