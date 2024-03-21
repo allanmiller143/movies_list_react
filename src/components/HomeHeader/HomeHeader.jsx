@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import './HomeHeader.css';
 import Search from '../Search/Search';
 
 function Header() {

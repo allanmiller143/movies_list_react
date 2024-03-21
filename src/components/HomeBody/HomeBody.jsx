@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import './HomeBody.css';
 import fetchMovies from '../../api/fetchMovies';
 import AppContext from '../../context/AppContext';
+import MovieCard from '../MovieCard/MovieCard';
 
 function HomeBody() {
   
@@ -23,10 +24,7 @@ function HomeBody() {
       <div className="homeBody__movies">
         {movies.map(
           (movie) => (
-            <div className="movie" key = {movie.id}>
-              <h3>{movie.Title}</h3>
-              <p>{movie.Year}</p>
-            </div>
+            <MovieCard key = {movie.imdbID} data = {{Title: movie.Title, Year: movie.Year, Poster: movie.Poster, imdbID: movie.imdbID}}/>
           )
         )}
       </div>
