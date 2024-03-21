@@ -4,13 +4,7 @@ import './MovieCard.css';
 import { Link } from 'react-router-dom';
 function MovieCard({data}) {
 
-  const {Title, Year, Poster, imdbID} = data;
-
-  const handleSeeDetails = () => {
-    alert(
-      `Título: ${Title}\nAno: ${Year}\nPoster: ${Poster} \nID: ${imdbID}`
-    );
-  };
+  const {Title, Year, Poster} = data;
 
   return (
     <div className="movieCard">
@@ -19,11 +13,11 @@ function MovieCard({data}) {
         <h3 className="movieCard__title"> {Title}</h3>
         <p className="movieCard__year">{Year}</p>
       </div>  
-      <button className="movieCard__button" type="submit" onClick={() => handleSeeDetails()} >
-        <Link to={`/details/${imdbID}`} className="movieCard__button">
+     
+      <Link to={`/details/${encodeURIComponent(Title)}`} className="movieCard__button">
           Ver detalhes
-        </Link>
-      </button>
+      </Link>
+     
     </div>
 
   );

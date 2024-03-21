@@ -1,13 +1,18 @@
-// About.js
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import DetailHeader from '../../components/DetailHeader/DetailHeader';
+import DetailBody from '../../components/DetailBody/DetailBody';
 
-const Details = () => {
+function Details() {
+  const { title } = useParams();
+
   return (
     <div>
-      <h2>Sobre</h2>
-      <p>Esta é a página de informações sobre o projeto.</p>
+      <DetailHeader data = {{title}}/>
+      <DetailBody data = {{title}}/>
+
     </div>
   );
-};
+}
 
 export default Details;

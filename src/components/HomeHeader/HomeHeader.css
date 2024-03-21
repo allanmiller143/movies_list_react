@@ -18,6 +18,8 @@
   margin: 0 auto;
   color: beige;
   height: 100%; /* Ocupa toda a altura disponível */
+  font-size: larger;
+  font-weight: 500;
 }
 
 
