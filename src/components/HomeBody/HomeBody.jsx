@@ -1,10 +1,11 @@
-import React, { useEffect,useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './HomeBody.css';
-
 import fetchMovies from '../../api/fetchMovies';
+import AppContext from '../../context/AppContext';
 
 function HomeBody() {
-  const [movies, setMovies] = useState([]);
+  
+  const {movies, setMovies} = useContext(AppContext);
 
   useEffect(() => {
     fetchMovies('all').then((response) => {
@@ -16,8 +17,11 @@ function HomeBody() {
 
   return (
     <div className="homeBody">
-      {
-        movies.map(
+      <h2 className="homeBody__title">
+        Melhores filmes
+      </h2>
+      <div className="homeBody__movies">
+        {movies.map(
           (movie) => (
             <div className="movie" key = {movie.id}>
               <h3>{movie.Title}</h3>
@@ -25,6 +29,7 @@ function HomeBody() {
             </div>
           )
         )}
+      </div>
     </div>
   );
 }

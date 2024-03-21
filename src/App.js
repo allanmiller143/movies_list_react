@@ -1,11 +1,12 @@
 
 import React from 'react';
 import AppRoutes from './AppRoutes/AppRoutes';
+import Provider from './context/Provider';
 function App() {
   return (
-    <div>
+    <Provider>
       <AppRoutes/>
-    </div>
+    </Provider>
   );
 }
 
